@@ -1,0 +1,252 @@
+
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color:black;
+    overflow: hidden;
+    cursor:not-allowed;
+}
+
+p{
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.section{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    pointer-events: none;
+
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    position: absolute;
+    z-index: 3;
+
+    max-width:fit-content;
+}
+
+.section.visible{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.center{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    aspect-ratio: 1/1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index: 3;
+
+    transition: opacity 5s;
+}
+
+img{
+    object-fit: cover;
+    transform: translateY(10%);
+    position:relative;
+}
+
+.image{
+    opacity: 0;
+    object-fit: cover;
+    transition: opacity 2s;
+
+}
+
+p{
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+    padding: 0px;
+}
+
+/* divs */
+.top_horiz {
+    /* visibility: hidden;
+    width: 100vw;
+    height: 14vh;
+    top: 0px;
+    aspect-ratio: 1/1;
+    transition: opacity 5s ease-in-out;
+    box-shadow: inset 0 0 50px white;
+    z-index: 1; */
+
+    opacity: 0;
+    transition: opacity 5s ease-in-out;
+    background-color: black;
+    background-image: url("Media/Falling.jpg");
+    background-size: contain;
+    width: 100vw;
+    height: 14vh;
+    top: 0px;
+    aspect-ratio: 1/1;
+    box-shadow: inset 0 0 50px white;
+    z-index: 1;
+}
+
+.bottom_horiz {
+    /* visibility: hidden;
+    position:fixed; /* necessary for div to display 
+    width: 100vw;
+    height: 14vh;
+    bottom: 0px;
+    aspect-ratio: 1/1;
+    box-shadow: inset 0 0 50px white;
+    z-index: 1; 
+    */
+
+    opacity: 0;
+    transition: opacity 5s;
+    background-color: black;
+    background-image: url("Media/FallingFlipped.jpg");
+    background-size: contain;
+    position: fixed;
+    width: 100vw;
+    height: 14vh;
+    bottom: 0px;
+    aspect-ratio: 1/1;
+    box-shadow: inset 0 0 50px white;
+    z-index: 1;
+}
+
+.top_right {
+    /* visibility: hidden;
+    background-color: black;
+    width: 25vw;
+    aspect-ratio: 1/1;
+    position: fixed;
+    top:0px;
+    right: 0px;
+    box-shadow: inset 0 0 50px white;
+    z-index: 2; */
+
+    opacity: 0;
+    transition: opacity 5s;
+    background-color: black;
+    background-image: url("Media/Eye.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 25vw;
+    aspect-ratio: 1/1;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    box-shadow: inset 0 0 50px white;
+    z-index: 2;
+}
+
+
+.bottom_right {
+    /* visibility: hidden;
+    background-color: black;
+    width: 25vw;
+    position: fixed;
+    right: 0px;
+    bottom:0px;
+    box-shadow: inset 0 0 50px white;
+    aspect-ratio: 1/1;
+    z-index: 2; */
+
+    opacity: 0;
+    transition: opacity 5s;
+    background-color: black;
+    background-image: url("Media/MannequinFlipped.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 25vw;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    box-shadow: inset 0 0 50px white;
+    aspect-ratio: 1/1;
+    z-index: 2;
+}
+
+.bottom_left {
+    /* visibility:hidden;
+    background-color: black;
+    width: 25vw;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    box-shadow: inset 0 0 50px white;
+    aspect-ratio: 1/1;
+    z-index: 2; */
+
+    opacity: 0;
+    transition: opacity 5s;
+    background-color: black;
+    background-image: url("Media/EyeFlipped.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 25vw;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    box-shadow: inset 0 0 50px white;
+    aspect-ratio: 1/1;
+    z-index: 2;
+}
+
+.top_left {
+    /* visibility: hidden;
+    background-color: black;
+    width: 25vw;
+    top:0px;
+    left: 0px;
+    box-shadow: inset 0 0 50px white;
+    position: absolute;
+    aspect-ratio: 1/1;
+    z-index: 2; */
+
+    opacity: 0;
+    transition: opacity 5s;
+    background-color: black;
+    background-image: url("Media/Mannequin.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 25vw;
+    top: 0px;
+    left: 0px;
+    box-shadow: inset 0 0 50px white;
+    position: absolute;
+    aspect-ratio: 1/1;
+    z-index: 2;
+}
+
+.top_horiz.visible,
+.bottom_horiz.visible,
+.top_right.visible,
+.bottom_right.visible,
+.top_left.visible,
+.bottom_left.visible {
+    opacity: 1;
+}
+
+.top_horiz.visible,
+.bottom_horiz.visible,
+.top_right.visible,
+.bottom_right.visible,
+.top_left.visible,
+.bottom_left.visible {
+    opacity: 1;
+}
+
+.top_horiz.faded,
+.bottom_horiz.faded,
+.top_right.faded,
+.bottom_right.faded,
+.top_left.faded,
+.bottom_left.faded {
+    opacity: 0;
+}

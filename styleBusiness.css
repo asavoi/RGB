@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap');
+
+
+body, html {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+nav{
+    flex-shrink: 0;
+}
+
+.navbar{
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+    padding: 0rem 5rem;
+    background-color: white;
+    color:black;
+}
+
+#company {
+    margin-right: auto;
+    justify-content: baseline;
+}
+
+/* img */
+.buildings{
+    filter: brightness(65%);
+}
+
+p{
+    font-size: 25px;
+    font-weight:lighter;
+    font-family: "STIX Two Text",serif;
+    margin: 15px;
+}
+
+h2{
+    font-weight:lighter;
+    font-size:20px;
+    font-family: "STIX Two Text",serif;
+    margin: 10px;
+}
+
+/* nav */
+div a{
+    position: relative;
+    color: black;
+    text-decoration: none;
+}
+div a:link{
+    color:black;
+    text-decoration:none;
+}
+
+div a:hover{
+    color:black;
+
+}
+div a::before{
+    content:"";
+    position:absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    background-color:black;
+    transition: transform 0.3s ease;
+}
+
+div a:hover::before{
+    transform: scaleX(1);
+}
+
+div a:visited{
+    color:black;
+    text-decoration:none;
+}
+
+div a:active{
+    color:black;
+    text-decoration:none;
+}
+
+section{
+    flex: 1;
+    position: relative;
+    height: calc(100vh - 20vh);
+    width: 100%;
+    overflow: hidden;
+}
+
+.hidden{
+    opacity:0;
+    filter: blur(5px);
+    transform: translateY(10%);
+    transition: all 3s;
+}
+
+.show{
+    opacity:1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.show #overlayText{
+opacity: 1;
+transform: translate(-50%, -50%);
+filter: blur();
+}
+
+.buildings {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(65%);
+}
+
+#overlayText{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    text-shadow: 10px;
+    font-family: "Libre Caslon Text";
+    font-size: 60px;
+    text-decoration: none;
+    opacity:0;
+    filter: blur(5px);
+    transform: translate(-50%, -40%);
+    transition: all 2s 1s;
+}
+
+#overlayText:hover{
+    color: white;
+}
+
+#overlayText:visited{
+    color: white;
+}
+
+#overlayText:active{
+    color: red;
+}
